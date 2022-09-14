@@ -1,0 +1,43 @@
+nav {
+  position: fixed;
+  display: grid;
+  top: 0;
+  background-color: #fff;
+  height: 3.3em;
+  line-height: 3.3em;
+  width: 100%;
+  border-bottom: 0.1em solid #dbdbdb;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+}
+
+.logo {
+  text-decoration: none;
+}
+
+.logo > img {
+  vertical-align: middle;
+}
+
+.search {
+  background: #fafafa;
+  height: 2em;
+  margin: 0.8em;
+  width: 15.5em;
+  border: 0.07em solid #dbdbdb;
+  border-radius: 0.2em;
+}
+
+.search::placeholder {
+  text-align: center;
+  color: #808080;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links i {
+  transform: scale(1.5);
+  color: #252525;
+}
