@@ -10,20 +10,26 @@ const Nav = () => {
       <input
         type="text"
         className={classes.search}
-        placeholder="search"
+        placeholder="Search"
       ></input>
       <span className={classes["nav-links"]}>
         <button>
-          <i className="fas fa-home"></i>
+          <i className="fa-solid fa-house"></i>
         </button>
         <button>
-          <i className="fas fa-comment-alt"></i>
+          <i className="fa-regular fa-comment"></i>
         </button>
         <button>
-          <i className="fas fa-compass"></i>
+          <i className="fa-regular fa-square-plus"></i>
         </button>
         <button>
-          <i className="fas fa-heart"></i>
+          <i className="fa fa-compass"></i>
+        </button>
+        <button>
+          <i className="fa-regular fa-heart"></i>
+        </button>
+        <button>
+          <i className="fa-regular fa-circle-user"></i>
         </button>
       </span>
     </nav>
