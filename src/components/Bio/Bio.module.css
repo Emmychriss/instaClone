@@ -38,7 +38,7 @@
 }
 
 .profile-photo img:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .profile-info .name {
@@ -53,6 +53,7 @@
 }
 
 .profile-info button {
+  margin-top: 0.5em;
   background-color: #0095f6;
   color: #fff;
   font-size: 1.1em;
@@ -79,6 +80,10 @@
 
 .edit-bio-form .cancel-button {
   background-color: #890000;
+}
+
+.edit-bio-form .cancel-button:hover {
+  background-color: #a80000;
 }
 
 #addPhotoInput {
