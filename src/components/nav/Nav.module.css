@@ -26,6 +26,7 @@ nav {
   width: 18.5em;
   border: 0.07em solid #dbdbdb;
   border-radius: 0.5em;
+  outline: none;
 }
 
 .search::placeholder {
