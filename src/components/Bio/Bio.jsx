@@ -1,11 +1,16 @@
 import classes from "./Bio.module.css";
-import profileIcon from "../../src/assets/profilePhoto.svg";
+import profileIcon from "../../assets/profileIcon.svg";
 
 const Bio = (props) => {
   const editForm = (
-    <form>
+    <form className={classes["edit-bio-form"]}>
       <input type="text" id="" placeholder="Your Name"></input>
       <input type="text" id="" placeholder="About You"></input>
+      <br />
+      <button type="button" className={classes["cancel-button"]}>
+        Cancel
+      </button>
+      <button type="button">Save</button>
     </form>
   );
 
@@ -23,6 +28,7 @@ const Bio = (props) => {
         <p className={classes.about}>
           Learning and growing in the tech space to become better!
         </p>
+        {editForm}
         <button>Edit</button>
       </div>
     </section>
