@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./Bio.module.css";
+import "./Bio.css";
 import profileIcon from "../../assets/profileIcon.svg";
 
 const Bio = (props) => {
@@ -31,18 +31,11 @@ const Bio = (props) => {
   const editButton = <button onClick={openEditForm}>Edit</button>;
 
   const editForm = (
-    <form
-      className={classes["edit-bio-form"]}
-      onSubmit={(e) => updateUserDetails(e)}
-    >
+    <form className="edit-bio-form" onSubmit={(e) => updateUserDetails(e)}>
       <input type="text" id="nameOfUser" placeholder="Your Name"></input>
       <input type="text" id="aboutUser" placeholder="About You"></input>
       <br />
-      <button
-        type="button"
-        className={classes["cancel-button"]}
-        onClick={closeEditForm}
-      >
+      <button type="button" className="cancel-button" onClick={closeEditForm}>
         Cancel
       </button>
       <button type="submit">Save</button>
@@ -50,17 +43,21 @@ const Bio = (props) => {
   );
 
   return (
-    <section className={classes.bio}>
-      <div
-        className={classes["profile-photo"]}
-        role="button"
-        title="Click to edit photo"
-      >
-        <img src={profileIcon} alt="Profile"></img>
-      </div>
-      <div className={classes["profile-info"]}>
-        <p className={classes.name}>{userDetails.name}</p>
-        <p className={classes.about}>{userDetails.about}</p>
+    <section className="bio">
+      <input type="file" accept="image/*" name="photo" id="profilePhotoInput" />
+      <label htmlFor="profilePhotoInput">
+        <div
+          className="profile-photo"
+          role="button"
+          title="Click to update photo"
+        >
+          <img src={profilePhoto} alt="Profile picture"></img>
+        </div>
+      </label>
+
+      <div className="profile-info">
+        <p className="name">{userDetails.name}</p>
+        <p className="about">{userDetails.about}</p>
         {editformIsOpen ? editForm : editButton}
       </div>
     </section>
