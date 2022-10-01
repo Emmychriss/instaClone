@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <nav>
       <button className={classes.logo}>
-        <img src={instaLogo}></img>
+        <img src={instaLogo} alt="Instagram logo"></img>
       </button>
       <input
         type="text"
