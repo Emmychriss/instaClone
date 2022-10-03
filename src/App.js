@@ -2,6 +2,7 @@ import "./App.css";
 
 import Nav from "./components/nav/Nav";
 import Bio from "./components/Bio/Bio";
+import Gallery from "./components/Gallery/Gallery";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <div className="App">
         <Bio />
+        <Gallery/>
       </div>
     </>
   );
