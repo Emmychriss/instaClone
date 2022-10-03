@@ -8,7 +8,6 @@ const Bio = (props) => {
     name: "Nduka Emmanuel",
     about: "Learning and growing in the tech space to become better!",
   });
-
   const [editformIsOpen, setEditFormIsOpen] = useState(false);
   const [profilePhoto, setProfilePhoto] = useState(profileIcon);
 
