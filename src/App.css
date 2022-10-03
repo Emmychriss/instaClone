@@ -1,0 +1,17 @@
+body {
+  background-color: #fafafa;
+  margin: 0;
+}
+
+.App {
+  padding: 0 15%;
+}
+
+button {
+  cursor: pointer;
+  padding: unset;
+  border: unset;
+  background: unset;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+}
