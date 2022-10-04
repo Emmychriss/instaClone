@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Bio.css";
 import profileIcon from "../../assets/profileIcon.svg";
 import getPhotoUrl from "get-photo-url";
+import { db } from "../../dexie";
 
 const Bio = (props) => {
   const [userDetails, setUserDetails] = useState({
@@ -16,12 +17,17 @@ const Bio = (props) => {
     setProfilePhoto(newProfilePhoto);
   };
 
-  const updateUserDetails = (event) => {
+  const updateUserDetails = async (event) => {
     event.preventDefault();
-    setUserDetails({
+
+    const objectData = {
       name: document.querySelector("#nameOfUser").value,
       about: document.querySelector("#aboutUser").value,
-    });
+    };
+
+    setUserDetails(objectData);
+
+    await db.bio.put(objectData, "info");
 
     setEditFormIsOpen(false);
   };
