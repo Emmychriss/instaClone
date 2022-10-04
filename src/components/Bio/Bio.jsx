@@ -12,6 +12,15 @@ const Bio = (props) => {
   const [editformIsOpen, setEditFormIsOpen] = useState(false);
   const [profilePhoto, setProfilePhoto] = useState(profileIcon);
 
+  useEffect(() => {
+    const setDataFromDB = async () => {
+      const userDetailsFromDB = await db.bio.get("info");
+      userDetailsFromDB && setUserDetails(userDetailsFromDB);
+    };
+
+    setDataFromDB();
+  });
+
   const updateProfilePhoto = async () => {
     const newProfilePhoto = await getPhotoUrl("#profilePhotoInput");
     setProfilePhoto(newProfilePhoto);
