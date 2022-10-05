@@ -56,8 +56,18 @@ const Bio = (props) => {
 
   const editForm = (
     <form className="edit-bio-form" onSubmit={(e) => updateUserDetails(e)}>
-      <input type="text" id="nameOfUser" placeholder="Your Name"></input>
-      <input type="text" id="aboutUser" placeholder="About You"></input>
+      <input
+        type="text"
+        id="nameOfUser"
+        defaultValue={userDetails.name}
+        placeholder="Your Name"
+      ></input>
+      <input
+        type="text"
+        id="aboutUser"
+        defaultValue={userDetails.about}
+        placeholder="About You"
+      ></input>
       <br />
       <button type="button" className="cancel-button" onClick={closeEditForm}>
         Cancel
