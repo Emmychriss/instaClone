@@ -15,7 +15,9 @@ const Bio = (props) => {
   useEffect(() => {
     const setDataFromDB = async () => {
       const userDetailsFromDB = await db.bio.get("info");
+      const userProfilePhotoFromDB = await db.bio.get("profilePhoto");
       userDetailsFromDB && setUserDetails(userDetailsFromDB);
+      userProfilePhotoFromDB && setProfilePhoto(userProfilePhotoFromDB);
     };
 
     setDataFromDB();
@@ -24,6 +26,7 @@ const Bio = (props) => {
   const updateProfilePhoto = async () => {
     const newProfilePhoto = await getPhotoUrl("#profilePhotoInput");
     setProfilePhoto(newProfilePhoto);
+    await db.bio.put(newProfilePhoto, "profilePhoto");
   };
 
   const updateUserDetails = async (event) => {
