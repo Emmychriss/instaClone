@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { useLiveQuery } from "dexie-react-hooks";
 
 import classes from "./Gallery.module.css";
 import getPhotoUrl from "get-photo-url";
+import { db } from "../../dexie";
 
 const Gallery = () => {
-  const [allPhotos, setAllPhotos] = useState([]);
+  const allPhotos = useLiveQuery(() => db.gallery.toArray(), []);
+  console.log(allPhotos);
 
   const addPhotoHandler = async () => {
-    const newPhoto = {
-      id: Date.now(),
+    db.gallery.add({
       url: await getPhotoUrl("#addPhotoInput"),
-    };
-
-    setAllPhotos([newPhoto, ...allPhotos]);
+    });
   };
 
   return (
@@ -23,7 +22,7 @@ const Gallery = () => {
       </label>
 
       <section className={classes.gallery}>
-        {allPhotos.map((photo) => {
+        {allPhotos?.map((photo) => {
           return (
             <div className={classes.item} key={photo.id}>
               <img src={photo.url} className={classes["item-image"]} alt="" />
