@@ -21,7 +21,7 @@ const Bio = (props) => {
     };
 
     setDataFromDB();
-  });
+  }, []);
 
   const updateProfilePhoto = async () => {
     const newProfilePhoto = await getPhotoUrl("#profilePhotoInput");
